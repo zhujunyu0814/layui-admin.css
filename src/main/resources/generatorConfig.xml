@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 导入属性配置 -->
+    <properties resource="db.properties"></properties>
+
+    <!-- 指定数据库的jdbc驱动程序的位置，如果在pom中指定了依赖，这里可以不用 -->
+    <!-- <classPathEntry location="${jdbc.driverLocation}" /> -->
+
+    <!-- context 用于指定生成对象的配置 -->
+    <!-- targetRuntime：设置生成的文件适用于那个 mybatis 版本 -->
+    <context id="default" targetRuntime="MyBatis3">
+
+        <plugin type="com.xyp.mybatis.plugin.PaginationPlugin"></plugin>
+
+        <!-- optional, 用于为MBG生成的各种元素生成注释 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 (默认) -->
+            <property name="suppressAllComments" value="false"/>
+
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!-- jdbc的数据库连接 -->
+        <jdbcConnection driverClass="${driverClassName}"
+                        connectionURL="${url}" userId="${username}"
+                        password="${password}">
+
+            <property name="nullCatalogMeansCurrent" value="true" />
+
+        </jdbcConnection>
+
+        <!-- optional，类型处理器，在数据库类型和java类型之间的转换控制 -->
+        <javaTypeResolver>
+            <!-- 默认情况下数据库中的 decimal，bigInt 在 Java 对应是 BigDecimal 类 -->
+            <!-- 比例大于零，或者长度大于18，使用BigDecimal -->
+            <!-- 使用常用的基本类型代替 sql 包下的引用类型 -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 用于定义Java模型生成器的属性。targetPackage：生成的实体类所在的包；targetProject：生成的实体类所在的项目和源文件夹 -->
+        <javaModelGenerator
+                targetPackage="com.xsl.middle_school_oa.domain"
+                targetProject=".\src\main\java">
+            <!-- 针对数据库的一个配置，是否把 schema 作为字包名 默认false -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对modal添加构造函数， 默认false -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否清理从数据库中查询出的字符串左右两边的空白字符，默认false -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立modal对象是否不可改变 即生成的modal对象不会有setter方法，只有构造方法，默认false -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 用于定义SQL映射生成器的属性。targetPackage 和 targetProject：生成的 mapper 文件的包和位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject=".\src\main\resources">
+            <!-- 针对数据库的一个配置，是否把 schema 作为字包名，默认false -->
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.xsl.middle_school_oa.mapper"
+                             targetProject=".\src\main\java">
+            <!-- 针对 oracle 数据库的一个配置，是否把 schema 作为字包名 -->
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+<!--                <table tableName="sys_user" domainObjectName="SysUser">-->
+<!--                                <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--                </table>-->
+
+<!--                <table tableName="dept" domainObjectName="Department">-->
+<!--                                                    <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--                </table>-->
+<!--        <table tableName="article" domainObjectName="Article">-->
+<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--        </table>-->
+<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--        </table>-->
+
+
+
+
+        <!--        <table tableName="article_file" domainObjectName="ArticleFile"></table>-->
+
+                <table tableName="article_receiver" domainObjectName="ArticleReceiver">
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>
+                </table>
+
+
+        <!--        <table tableName="article_type" domainObjectName="ArticleType"></table>-->
+
+        <!--        <table tableName="sys_role" domainObjectName="SysRole">-->
+        <!--            <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+        <!--        </table>-->
+
+    </context>
+</generatorConfiguration>
+
+
+

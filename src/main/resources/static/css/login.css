@@ -1,0 +1,150 @@
+html,body{
+    height: 100%;
+}
+body{
+    background-color: #f0f2f5;
+}
+
+@font-face {font-family: "AI";
+  src: url('../font/ai.eot?t=1522660080732'); /* IE9*/
+  src: url('../font/ai.eot?t=1522660080732#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('../font/ai.ttf?t=1522660080732') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/ai.svg?t=1522660080732#AI') format('svg'); /* iOS 4.1- */
+}
+
+.bgimg{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height:1080px;
+     background-color: #fff;
+    background: url('/img/login.jpg') no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container{
+    position: relative;
+  width: 543px;
+height: 650px;
+background: #ffffffe6;
+border-radius: 16px;
+padding: 100px 45px;
+box-sizing: border-box; 
+    
+}
+
+.rig-1{
+	font-size: 44px;
+    font-family: Source Han Sans CN;
+    font-weight: 500;
+    color: rgba(119, 105, 255, 0.72);
+    text-align: center;
+}
+.rig-2{
+	font-size: 19px;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    top: -135px;
+}
+.rig-2 p{
+	margin-left: 12px;
+}
+.rig-2 input{
+	width: 20px;
+	height: 20px;
+} 
+
+.login-form{
+	    margin: 50px 0 0;
+}
+.input-group{
+	    margin-bottom: 20px;
+}
+.input-group input{
+	    width: 446px;
+    height: 71px;
+    background: rgba(196, 196, 196, 0.13); 
+    border-radius: 36px;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box; 
+    border: 1px solid rgba(0, 0, 0, 0.13); 
+    font-size: 23px; 
+} 
+
+
+.login-button{ 
+	width: 438px;
+    height: 64px;
+    background: rgba(119, 105, 255, 0.72);
+    box-shadow: 0px 10px 24px 0px rgb(104 159 56 / 28%);
+    border-radius: 32px;
+    margin-top: 70px;
+    border: 0; 
+    font-size: 28px;
+font-family: Microsoft YaHei;
+font-weight: 400;
+color: #FFFFFF; 
+}
+
+.bot{
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+}
+
+.login-left{
+	width: 450px;
+	margin-right: 200px; 
+}
+.left-1{
+	font-size: 45px;
+    font-family: Source Han Sans CN;
+    font-weight: 300;
+    color: #FFFFFF;
+    line-height: 31px;
+}
+.left-2{
+	    font-size: 64px;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 82px;
+}
+.login-line{
+	    display: block;
+    margin: 30px 0;
+    width: 42px;
+    height: 3px;
+    background: #FFFFFF;
+}
+
+
+.login-button:focus{
+    outline: none;
+}
+
+@-webkit-keyframes fieldUp {
+    50% {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
