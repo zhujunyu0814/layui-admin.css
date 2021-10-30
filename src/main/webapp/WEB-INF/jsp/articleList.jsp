@@ -105,30 +105,12 @@
 
     </div>
 
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script type="text/html" id="barDemo">
 
     <a class="layui-btn layui-btn-radius layui-btn-primary layui-btn-sm " lay-event="view">查看</a>
-
 
     <c:if test="${not empty from}">
 
