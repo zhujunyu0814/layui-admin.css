@@ -24,7 +24,6 @@ public class DepartmentController {
     @Autowired
     private DepartmentMapper departmentMapper;
 
-
     @RequestMapping("/save")
     @ResponseBody
     public Map<String,Object> save(Department department){
