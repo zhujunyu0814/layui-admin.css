@@ -270,7 +270,7 @@ public class ArticleController {
     @RequestMapping("/edit")
     public String articleEdit(Integer type, ModelMap map, Integer id) {
         if (id != null) {
-            //编辑
+            //
             Article article = articleMapper.selectByPrimaryKey(id);
             type = article.getArticleTypeId();
             if (article.getHostId() != null) {
