@@ -135,18 +135,22 @@
             <artifactId>easyexcel</artifactId>
             <version>3.0.0-beta3</version>
         </dependency>
-
-       <!-- <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-           &lt;!&ndash; <version>3.16</version>&ndash;&gt;
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-           &lt;!&ndash; <version>3.16</version>&ndash;&gt;
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.apache.poi</groupId>
+             <artifactId>poi-ooxml</artifactId>
+            &lt;!&ndash; <version>3.16</version>&ndash;&gt;
+         </dependency>
+
+         <dependency>
+             <groupId>org.apache.poi</groupId>
+             <artifactId>poi</artifactId>
+            &lt;!&ndash; <version>3.16</version>&ndash;&gt;
+         </dependency>-->
     </dependencies>
 
     <build>

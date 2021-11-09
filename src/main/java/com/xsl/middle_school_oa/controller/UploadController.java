@@ -60,7 +60,6 @@ public class UploadController {
         File newFile=new File(dir,originalFilename);
         file.transferTo(newFile);
 
-
         returnMap.put("code",0);
         returnMap.put("message","");
 

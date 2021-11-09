@@ -9,6 +9,7 @@ import com.xsl.middle_school_oa.mapper.ArticleReceiverMapper;
 import com.xsl.middle_school_oa.mapper.DepartmentMapper;
 import com.xsl.middle_school_oa.mapper.SysRoleMapper;
 import com.xsl.middle_school_oa.mapper.SysUserMapper;
+import com.xsl.middle_school_oa.model.PharmacistExportModel;
 import com.xsl.middle_school_oa.utils.MyMapperUtils;
 import com.xsl.middle_school_oa.utils.TableResult;
 import org.apache.commons.lang3.StringUtils;
@@ -20,11 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -328,21 +328,45 @@ public class UserController {
         final ArrayList<Object> treeList = new ArrayList<>();
         treeList.add(m);
         returnMap.put("data",treeList);
-        return returnMap; 
+        return returnMap;
     }
-
-
 
 
     @RequestMapping("/importExcel")
     //人员管理中的导入
     @ResponseBody
-    public Map<String, Object> importExcel(@RequestParam("file") MultipartFile file)throws Exception{
+    public void importExcel(@RequestParam("file") MultipartFile file , HttpServletResponse response)throws Exception {
 
-        EasyExcel.read(file.getInputStream(),null,new SysUserListener(sysUserMapper,departmentMapper,sysRoleMapper)).sheet().doRead();
+/*        EasyExcel.read(file.getInputStream(),null,new SysUserListener(sysUserMapper,departmentMapper,sysRoleMapper)).sheet().doRead();
 
         Map<String,Object> returnMap= Maps.newHashMap();
         returnMap.put("msg","操作成功");
-        return returnMap;
+        return returnMap;*/
+
+
+        try {
+
+            response.setContentType("application/vnd.ms-excel");
+            response.setCharacterEncoding("utf-8");
+
+            // 获取数据
+            List<String> list = new ArrayList<String>();
+             list.add("姓名");
+             list.add("角色");
+             list.add("昵称");
+             list.add("密码");
+
+
+            String fileName = new String(("pharmacist" + new SimpleDateFormat("yyyy-MM-dd").format(new Date())).getBytes(),
+                    "UTF-8");
+            response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
+            EasyExcel.write(response.getOutputStream(), PharmacistExportModel.class).sheet("sheet1").doWrite(list);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
     }
+
 }
