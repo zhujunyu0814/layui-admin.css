@@ -92,6 +92,7 @@
                 <div class="layui-btn-container">
                     <button id="btn_user_add" class="layui-btn layui-btn-sm">新增</button>
                     <button type="button" class="layui-btn layui-btn-sm" id="test3">上传文件</button>
+                    <button id="js-export" type="button" class="layui-btn layui-btn-sm">导出Excel</button>
                 </div>
             </script>
             <table id="table_user" lay-filter="user_table"></table>
@@ -365,7 +366,13 @@
             }
         });
 
+        $('#js-export').click(function(){
+            window.location.href="/report/export";
+        });
+
     });
+
+
 
 </script>
 
