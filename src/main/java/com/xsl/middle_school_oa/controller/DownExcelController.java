@@ -32,7 +32,7 @@ public class DownExcelController {
         String fileName = "人员导入模板"+".xls";
         //String fileName = "人员导入模板"+".xlsx";
         //sheet名
-        String sheetName = "学生信息表";
+        String sheetName = "人员导入表";
         /*　for (int i = 0; i < list.size(); i++) {
                     content[i] = new String[title.length];
                     PageData obj = list.get(i);
