@@ -140,17 +140,17 @@
             <artifactId>junit-jupiter-params</artifactId>
         </dependency>
 
-        <!-- <dependency>
+         <dependency>
              <groupId>org.apache.poi</groupId>
              <artifactId>poi-ooxml</artifactId>
-            &lt;!&ndash; <version>3.16</version>&ndash;&gt;
+             <version>3.16</version>
          </dependency>
 
          <dependency>
              <groupId>org.apache.poi</groupId>
              <artifactId>poi</artifactId>
-            &lt;!&ndash; <version>3.16</version>&ndash;&gt;
-         </dependency>-->
+             <version>3.16</version>
+         </dependency>
     </dependencies>
 
     <build>
