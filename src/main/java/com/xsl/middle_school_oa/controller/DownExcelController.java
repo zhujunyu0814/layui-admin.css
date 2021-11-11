@@ -30,14 +30,16 @@ public class DownExcelController {
         //excel标题
         String[]  title = {"名称","昵称","角色","部门"};
 
-        //+".xls"
+         //excel文件名
         response.setContentType("application/vnd.ms-excel");
         response.setCharacterEncoding("utf-8");
         // 这里URLEncoder.encode可以防止中文乱码
         //excel文件名
-        String fileName = URLEncoder.encode("人员导入表", "UTF-8");
-        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlx");
+        String fileName = URLEncoder.encode("人员导入模板", "UTF-8");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xls");
 
+        //String fileName = "人员导入模板"+".xls";
+        //String fileName = "人员导入模板"+".xlsx";
         //sheet名
         String sheetName = "人员导入表";
 
@@ -46,6 +48,7 @@ public class DownExcelController {
 
         //响应到客户端
             try {
+                //this.setResponseHeader(response, fileName);
                 OutputStream os = response.getOutputStream();
                 wb.write(os);
                 os.flush();
