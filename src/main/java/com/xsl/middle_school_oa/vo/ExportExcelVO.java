@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ClaimsReportVO implements Serializable {
+public class ExportExcelVO implements Serializable {
 
     /**
      *
