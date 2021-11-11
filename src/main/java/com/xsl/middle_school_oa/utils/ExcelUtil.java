@@ -38,17 +38,7 @@ public class ExcelUtil {
             for(int i=0;i<title.length;i++){
                 cell = row.createCell(i);
                 cell.setCellValue(title[i]);
-                //cell.setCellStyle(style);
             }
-
-           /* //创建内容
-            for(int i=0;i<values.length;i++){
-                row = sheet.createRow(i + 1);
-                for(int j=0;j<values[i].length;j++){
-                    //将内容按顺序赋给对应的列对象
-                    row.createCell(j).setCellValue(values[i][j]);
-                }
-            }*/
             return wb;
         }
 
